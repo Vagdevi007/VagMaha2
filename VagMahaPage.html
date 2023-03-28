@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<style>
+		#candidate {
+			border-radius: 5%;
+			border-color: rgb(255, 127, 127);
+			box-sizing: border-box;
+		}
+		
+		.buttonClass {
+			border-radius: 5%;
+			border-color: rgba(34, 25, 25, 0);
+			border-style: inherit;
+		}
+		
+		button:hover {
+			background-color: rgb(38, 128, 0);
+		}
+	</style>
+</head>
+
+<body>
+    <h1>
+        Add Item
+    </h1>
+	<ul id="list"></ul>
+
+	<input type="text" id="candidate" />
+	<button onclick="addItem()" class="buttonClass">
+	Add</button>
+	<button onclick="removeItem()" class="buttonClass">
+	Remove</button>
+
+	<script>
+		function addItem() {
+			var a = document.getElementById("list");
+			var candidate = document.getElementById("candidate");
+			var li = document.createElement("li");
+			li.setAttribute('id', candidate.value);
+			li.appendChild(document.createTextNode(candidate.value));
+			a.appendChild(li);
+
+            window.alert("Please enter item");
+		}
+
+		function removeItem() {
+
+
+			var a = document.getElementById("list");
+			var candidate = document.getElementById("candidate");
+			var item = document.getElementById(candidate.value);
+			a.removeChild(item);
+            window.alert("Please select the item to remove");
+		}
+	</script>
+</body>
+
+</html>
